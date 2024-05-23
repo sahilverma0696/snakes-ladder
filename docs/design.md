@@ -1,7 +1,7 @@
 assumptions:
     1. the config file is expected to be correct or else the game will have undefined behaviour 
     2. as the humans perceive the snakes and ladder game, this is not a 2d grid, this is a single line array with same configs ( makes much sense)
-    3. 
+    3.
 
 - player
 - objects 
