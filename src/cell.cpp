@@ -17,7 +17,12 @@ CellState Cell::getCellState() { return state; }
 
 void Cell::updateCellState(CellState newState) { state = newState; }
 
-int Cell::getNumber() { return number; }
+int Cell::getNumber() const { return number; }
+
+void Cell::updateObject(Object *obj) { this->obj = obj; }
+
+Object* Cell::getObject() const {return obj;}
+
 
 
 

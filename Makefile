@@ -27,8 +27,13 @@ test_cell:
 	g++ -std=c++17  ./src/player.cpp ./src/object.cpp ./src/cell.cpp ./test/test_cell.cpp  -o ./bin/test_cell.out
 	./bin/test_cell.out >./logs/test_cell.log
 
+# make test_board
+test_board:
+	g++ -std=c++17   ./src/player.cpp ./src/object.cpp ./src/cell.cpp ./src/board.cpp ./test/test_board.cpp  -o ./bin/test_board.out
+	./bin/test_board.out >./logs/test_board.log
+
 # make test_all
-test_all: test_player test_object test_cell
+test_all: test_player test_object test_cell test_board
 
 #make clean
 clean:

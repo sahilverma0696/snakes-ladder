@@ -1,13 +1,14 @@
 #include "../src/basic.hpp"
 #include "../src/cell.hpp"
 
+
 void testCell() {
     std::cout << "Creating cells..." << std::endl;
 
     std::vector<Cell> cells;
     for (int i = 1; i <= 10; ++i) {
         if (i % 2 == 0) {
-            Object* objPtr = new Object(i, i + 1); // Example object with start and end positions
+            Object* objPtr = new Snake(i, i + 1); // Example Snake object with start and end positions
             cells.emplace_back(i, false, objPtr); // Create cell with object
         } else {
             cells.emplace_back(i, false, nullptr); // Create cell without object

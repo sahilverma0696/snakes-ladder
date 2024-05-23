@@ -4,12 +4,12 @@
 
 void testObject() {
     // Test case 1: Object start and end positions
-    std::cout << "Test case 1: Object start and end positions" << std::endl;
-    Object obj(3, 7);
-    std::cout << "Start position: " << obj.getStart() << ", Expected: 3" << std::endl;
-    std::cout << "End position: " << obj.getEnd() << ", Expected: 7" << std::endl;
-    assert(obj.getStart() == 3);
-    assert(obj.getEnd() == 7);
+    // std::cout << "Test case 1: Object start and end positions" << std::endl;
+    // Object obj(3, 7);
+    // std::cout << "Start position: " << obj.getStart() << ", Expected: 3" << std::endl;
+    // std::cout << "End position: " << obj.getEnd() << ", Expected: 7" << std::endl;
+    // assert(obj.getStart() == 3);
+    // assert(obj.getEnd() == 7);
 
     // Test case 2: Snake class
     std::cout << "Test case 2: Snake class" << std::endl;

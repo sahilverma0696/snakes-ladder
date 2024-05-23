@@ -1,5 +1,6 @@
 #pragma once
 #include "basic.hpp"
+#include "object.hpp"
 
 class Cell {
 
@@ -21,5 +22,9 @@ public:
   CellState getCellState();
   void updateCellState(CellState newState);
 
-  int getNumber();
+  int getNumber() const;
+
+  void updateObject(Object *obj);
+
+  Object* getObject() const;
 };

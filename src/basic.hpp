@@ -4,6 +4,8 @@
 #include <vector>
 #include <random>
 #include <string.h>
+#include <utility>
+
 
 using namespace std;
 
@@ -19,6 +21,8 @@ class Simulator;
 
 // this is the cell which contains a cell info
 enum class CellState { EMPTY = 0, FULL };
+
+
 
 // class Snake;
 // #include "object.hpp"
