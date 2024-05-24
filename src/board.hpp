@@ -4,7 +4,7 @@
 
 class Board {
 private:
-    int numCells;
+    const int numCells;
     vector<Cell> cells;
 
 public:

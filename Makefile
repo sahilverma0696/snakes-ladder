@@ -32,6 +32,11 @@ test_board:
 	g++ -std=c++17   ./src/player.cpp ./src/object.cpp ./src/cell.cpp ./src/board.cpp ./test/test_board.cpp  -o ./bin/test_board.out
 	./bin/test_board.out >./logs/test_board.log
 
+# make test_simulator
+test_simulator:
+	g++ -std=c++17   ./src/player.cpp ./src/object.cpp ./src/cell.cpp ./src/board.cpp ./src/simulator.cpp ./test/test_simulator.cpp  -o ./bin/test_simulator.out
+	./bin/test_simulator.out >./logs/test_simulator.log
+
 # make test_all
 test_all: test_player test_object test_cell test_board
 

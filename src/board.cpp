@@ -7,7 +7,7 @@ Board::Board(int numCells, const std::vector<std::pair<int, int> > &snakes,
              const std::vector<std::pair<int, int> > &ladders)
     : numCells(numCells) {
 
-    // cells.resize(numCells);
+    // cells.resize(numCells); // need special obj initialization
     for (int i = 0; i < numCells; ++i) {
         bool isWin = (i == numCells - 1);
         cells.push_back(Cell(i + 1, isWin, nullptr)); // Hard to find in unordered<pair<int,int>>

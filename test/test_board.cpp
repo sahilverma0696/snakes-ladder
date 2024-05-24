@@ -5,23 +5,6 @@
 #include "../src/cell.hpp"
 #include "../src/board.hpp"
 
-void printBoard(Board& board) {
-    for (int i = 0; i < board.getNumCells(); ++i) {
-        const Cell& cell = board.getCell(i + 1);
-        std::cout << "Cell " << cell.getNumber() << ": ";
-        if (cell.getObject() != nullptr) {
-            if (cell.getObject()->getType() == ObjectType::SNAKE) {
-                std::cout << "SNAKE";
-            } else if (cell.getObject()->getType() == ObjectType::LADDER) {
-                std::cout << "LADDER";
-            }
-        } else {
-            std::cout << "EMPTY";
-        }
-        std::cout << std::endl;
-    }
-}
-
 void testBoard() {
     // Initialize random number generator
     std::random_device rd;
