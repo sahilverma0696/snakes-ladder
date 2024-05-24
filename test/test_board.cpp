@@ -5,6 +5,9 @@
 #include "../src/cell.hpp"
 #include "../src/board.hpp"
 
+
+// FEATURE: If you wish to create your own sample board of different configuration 
+// please use the following, works like a charm
 void testBoard() {
 
   // taking assumptions that

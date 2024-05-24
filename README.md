@@ -10,6 +10,8 @@ Please read /docs/design to understand the assumptions taken and class tree stru
 - look for makefile for specific test cases running 
 
 - run `make test_all` for all the values being played
+- looking for `main.cpp` ->/test/test_simulator.cpp : top layer test cases and main function, allowing easier navigation
+
 
 ## Modularity
 

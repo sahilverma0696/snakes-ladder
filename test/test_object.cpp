@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cassert>
 
+// object class and lower testing purposes
 void testObject() {
     // Test case 1: Object start and end positions
     // std::cout << "Test case 1: Object start and end positions" << std::endl;
