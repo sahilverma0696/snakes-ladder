@@ -1,0 +1,30 @@
+{
+    "numCells": 100,
+    "numPlayers": 2,
+    "maxRounds": 999,
+    "numDice":2,
+    "dicePolicy":"SUM",
+    "snakes": [
+      { "head": 62, "tail": 5 },
+      { "head": 33, "tail": 6 },
+      { "head": 49, "tail": 9 },
+      { "head": 88, "tail": 16 },
+      { "head": 41, "tail": 20 },
+      { "head": 56, "tail": 53 },
+      { "head": 98, "tail": 64 },
+      { "head": 93, "tail": 73 },
+      { "head": 95, "tail": 75 }
+    ],
+    "ladders": [
+      { "tail": 2, "head": 37 },
+      { "tail": 27, "head": 46 },
+      { "tail": 10, "head": 32 },
+      { "tail": 51, "head": 68 },
+      { "tail": 61, "head": 79 },
+      { "tail": 65, "head": 84 },
+      { "tail": 71, "head": 91 },
+      { "tail": 81, "head": 100 }
+    ]
+
+  }
+  

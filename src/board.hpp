@@ -14,6 +14,6 @@ public:
 
     Cell getCell(int i);
 
-    void printBoard() const;
+    void printBoard();
 };
 

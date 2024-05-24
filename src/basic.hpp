@@ -5,24 +5,37 @@
 #include <random>
 #include <string.h>
 #include <utility>
+#include <cstdlib>
+#include <ctime>
 
 
 using namespace std;
 
-// Forward declarations for structs and classes used within the game
-// class Player;
 #include "player.hpp"
-// class Object;
 #include "object.hpp"
-// class Cell;
-// #include "cell.hpp"
+
 class Board;
 class Simulator;
 
-// this is the cell which contains a cell info
 enum class CellState { EMPTY = 0, FULL };
 
+enum class DicePolicy {
+    SUM,
+    MIN,
+    MAX
+};
 
+
+struct GameConfig {
+    std::string filename;
+    std::vector<std::pair<int, int> > snakes;
+    std::vector<std::pair<int, int> > ladders;
+    int numCells;
+    int numPlayers;
+    int maxRounds;
+    int numDice;
+    DicePolicy dicePolicy;
+};
 
 // class Snake;
 // #include "object.hpp"

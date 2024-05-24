@@ -42,7 +42,8 @@ Input format:
 ● Following L lines contains pair (Ladder bottom and Ladder top) 
 ● N no of players 
 ● Following N lines contains names & starting locations of each Player ● An override to manually enter the D die values that each player rolled in each turn. (Absent in example. Any input format is fine) 
-9 
+Snakes : 9 
+Head    Tail
 62 5 
 33 6 
 49 9 
@@ -52,7 +53,9 @@ Input format:
 98 64 
 93 73 
 95 75 
-8 
+
+Ladders :8 
+Tail Head
 2 37 
 27 46 
 10 32 
@@ -60,8 +63,9 @@ Input format:
 61 79 
 65 84 
 71 91 
-81 100 
-2 
+81 100
+
+players :2 
 Gaurav 1 
 Sagar 1 
 Output: 

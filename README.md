@@ -1,12 +1,11 @@
 # snakes-ladder
 
-## Catch2 
+Please read /docs/design to understand the assumptions taken and class tree structure 
 
-$ git clone https://github.com/catchorg/Catch2.git
-$ cd Catch2
-$ cmake -Bbuild -H. -DBUILD_TESTING=OFF
-$ sudo cmake --build build/ --target install 
+# note
+This program uses random generation of roll dice, which can lead to almost infinite loop, so there's a kill switch by number of rounds
 
-## status 
-- croc is not working 
-- player and object foundation is done 
+## usage 
+- look for makefile for specific test cases running 
+
+- run `make test_all` for all the values being played

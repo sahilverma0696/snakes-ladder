@@ -3,8 +3,8 @@
 #include "object.hpp"
 
 
-Board::Board(int numCells, const std::vector<std::pair<int, int> > &snakes,
-             const std::vector<std::pair<int, int> > &ladders)
+Board::Board(int numCells, const vector<pair<int, int> > &snakes,
+             const vector<pair<int, int> > &ladders)
     : numCells(numCells) {
 
     // cells.resize(numCells); // need special obj initialization
@@ -17,7 +17,6 @@ Board::Board(int numCells, const std::vector<std::pair<int, int> > &snakes,
     for (const auto& snake : snakes) {
         int start = snake.first;
         int end = snake.second;
-        cout << "MAKING SNAKES" << endl;
         cout<<start<<"\t"<<end<<endl;
         if (start <= numCells && end <= numCells) {
             cells[start - 1].updateObject(new Snake(start, end)); // Add snake to start cell
@@ -29,7 +28,6 @@ Board::Board(int numCells, const std::vector<std::pair<int, int> > &snakes,
     for (const auto& ladder : ladders) {
         int start = ladder.first;
         int end = ladder.second;
-        cout << "MAKING LADDER" << endl;
         cout<<start<<"\t"<<end<<endl;
         if (start <= numCells && end <= numCells) {
             cells[start - 1].updateObject(new Ladder(start, end)); // Add ladder to start cell
@@ -37,27 +35,33 @@ Board::Board(int numCells, const std::vector<std::pair<int, int> > &snakes,
 
         }
     }
+
+    // Printing the ready board
+    printBoard();
 }
 
 int Board::getNumCells() { return numCells; }
 
 Cell Board::getCell(int i) { return cells[i]; }
 
-void Board::printBoard() const {
+void Board::printBoard() {
+
+  cout<<"FINAL CONFIG OF BOARD"<<endl;
     for (int i = 0; i < numCells; ++i) {
         const Cell& cell = cells[i];
-        std::cout << "Cell " << cell.getNumber() << ": ";
+        cout << "Cell " << cell.getNumber() << ": ";
         if (cell.getObject() != nullptr) {
             if (cell.getObject()->getType() == ObjectType::SNAKE) {
-                std::cout << "SNAKE";
+                cout << "SNAKE";
             } else if (cell.getObject()->getType() == ObjectType::LADDER) {
-                std::cout << "LADDER";
+                cout << "LADDER";
             }
         } else {
-            std::cout << "EMPTY";
+            cout << "EMPTY";
         }
-        std::cout << std::endl;
+        cout << endl;
     }
+    cout<<endl;
 }
 
 

@@ -4,11 +4,10 @@
 #include "../src/simulator.hpp"
 
 int main() {
-    // Create a game simulator with 4 players
-    GameSimulator simulator(4);
+    GameSimulator* simulator = new GameSimulator();
 
     // Simulate the game
-    simulator.simulate();
+    simulator->simulate();
 
     return 0;
 }

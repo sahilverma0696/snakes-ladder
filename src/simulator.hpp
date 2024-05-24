@@ -5,15 +5,18 @@
 
 class GameSimulator {
 private:
-    int numPlayers;
+  GameConfig config;
+  int numPlayers;
+  int numCells;
+
     Board* board;
-    std::vector<Player> players;
+    vector<Player> players;
 
     int rollDice(); // Declaration of the rollDice function
 
 public:
-    GameSimulator(int numPlayers);
-    // ~GameSimulator(); // Destructor to clean up memory
+    GameSimulator();
+    ~GameSimulator(); // Destructor to clean up memory
 
     void simulate();
 

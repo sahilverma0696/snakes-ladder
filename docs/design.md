@@ -24,8 +24,7 @@ assumptions:
     - is_mined // need better way 
 
 - objects 
-    - name 
-    - direction (+,-)
+    - name :: ObjectType
     - start
     - end 
 
@@ -51,7 +50,4 @@ assumptions:
     - dicing 
     - logger 
     - board 
-
-
-    
 
