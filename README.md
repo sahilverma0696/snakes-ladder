@@ -35,7 +35,8 @@ Please read /docs/design to understand the assumptions taken and class tree stru
     - Logging                       [DONE]
     - Driver (Simulator)            [DONE]
     - Die Value & Round Robin       [DONE]
-    
+    - Configurable                  [DONE]
+
 
 ## PS
     - This code will be having spelling mistakes, please try to overlook them, I'm a developer

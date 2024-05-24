@@ -31,8 +31,8 @@ GameSimulator::~GameSimulator() {
     delete board;
 }
 
-// TODO **: if one wishes to provide manual values for dice, default param can be taken here 
-void GameSimulator::simulate() {
+// FEATURE **: if one wishes to provide manual values for dice, default param can be taken here 
+void GameSimulator::simulate(int manualDice) {
 
 
     cout<<"STARTING GAME"<<endl;
@@ -40,7 +40,7 @@ void GameSimulator::simulate() {
     while (true) {
       cout << "Round " << round + 1 << ":\n" << endl;
         for (int i = 0; i < config.numPlayers; ++i) {
-          int roll = rollDice(); // TODO **: and can override here
+          int roll = manualDice ==0 ?rollDice():manualDice; // FEATURE **: and can override here
           Player &currentPlayer = players[i];
             int currentPosition = currentPlayer.getPosition();
             int newPosition = currentPosition + roll;

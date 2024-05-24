@@ -18,6 +18,6 @@ public:
     GameSimulator();
     ~GameSimulator(); // Destructor to clean up memory
 
-    void simulate();
+    void simulate(int manualDice=0);
 
 };
