@@ -16,5 +16,26 @@ Please read /docs/design to understand the assumptions taken and class tree stru
 - This code is written on layered architecture, allowing the developer to config and update the layers and classes to their needs
 - Same reason there is not direct `main.cpp` is not provided, please feel free to make one taking inspiration from /test classes, if you've a different test case in mind
 
+
+## Functional requirements
+    - Number of players: N      [DONE]
+    - Board Size: BS (BS x BS)  [DONE]
+    - Number of Snakes: S       [DONE]
+    - Number of Ladders: L      [DONE]
+    - Number of Dies: D         [DONE]
+    - Movement Strategy: MS     [DONE]
+    - Sample input to populate  [DONE] 
+    - Snake bites, down         [DONE]
+    - Ladder, up                [DONE]
+    - Player overkill           [DONE]
+## Optional 
+    - Random board generate valid   [DONE]
+    - Test cases                    [DONE]    
+    - Special Objects               [PlaceHolder & Foundation implemented]  
+    - Logging                       [DONE]
+    - Driver (Simulator)            [DONE]
+    - Die Value & Round Robin       [DONE]
+    
+
 ## PS
     - This code will be having spelling mistakes, please try to overlook them, I'm a developer

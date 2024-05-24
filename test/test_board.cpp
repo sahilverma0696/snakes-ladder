@@ -6,6 +6,8 @@
 #include "../src/board.hpp"
 
 void testBoard() {
+
+  // taking assumptions that
     // Initialize random number generator
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -17,29 +19,30 @@ void testBoard() {
 
     // Generate 10 unique random positions for snakes
     while (snakes.size() < 10) {
-        int start = dis(gen);
-        int end = dis(gen);
-        if (start != end) {
-            snakes.push_back( {start, end} );
-        }
+    int start = dis(gen);
+    int end = dis(gen);
+
+    // Ensure end is less than start and larger than 0
+    if (end < start && end >= 1) {
+        snakes.push_back({start, end});
     }
-    for (auto p : snakes) {
-      cout<<p.first<<"\t"<<p.second<<endl;
     }
+
 
     // Generate 10 unique random positions for ladders
-    while (ladders.size() < 10) {
-        int start = dis(gen);
-        int end = dis(gen);
-        if (start != end) {
-            ladders.push_back( {start, end} );
-        }
+    while (snakes.size() < 10) {
+    int start = dis(gen);
+    int end = dis(gen);
+
+    // Ensure end is less than start and larger than 0
+    if (start < end && end < 100) {
+        snakes.push_back({start, end});
     }
-    for (auto p : ladders) {
-      cout<<p.first<<"\t"<<p.second<<endl;
     }
 
+
     // Create the board
+    // really love this feature in c++, handled in place of struct as well
     Board board(100, snakes, ladders);
 
     board.printBoard();
