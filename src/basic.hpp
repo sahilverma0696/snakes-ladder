@@ -17,15 +17,17 @@ using namespace std;
 class Board;
 class Simulator;
 
+// this helps in checking out cell state faster
 enum class CellState { EMPTY = 0, FULL };
 
+// the functional requirement for dicing policy
 enum class DicePolicy {
     SUM,
     MIN,
     MAX
 };
 
-
+// for expansion of GameConfig add values here and in /config/config.json
 struct GameConfig {
     std::string filename;
     std::vector<std::pair<int, int> > snakes;
@@ -36,12 +38,3 @@ struct GameConfig {
     int numDice;
     DicePolicy dicePolicy;
 };
-
-// class Snake;
-// #include "object.hpp"
-// // class Ladder;
-// #include "object.hpp"
-// // class Croc;
-// #include "object.hpp"
-// // class Mine;
-// #include "object.hpp"

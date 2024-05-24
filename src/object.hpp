@@ -15,12 +15,10 @@ public:
     Object(int start =1,int end =1):start(start),end(end){};
 
     int getStart() const;
-    // void setStart(int newStart);
 
     int getEnd() const;
-    // void setEnd(int newEnd);
 
-    virtual ObjectType getType() const = 0;
+    virtual ObjectType getType() const = 0; // Hate this guy, but helped a lot in simulation
 
     //TODO: shall make a isStable: allows to register in cell only if this is a valid obj ( start, stop valid values)
 };

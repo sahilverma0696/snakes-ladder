@@ -29,6 +29,7 @@ void readConfig(GameConfig& configObj) {
 
     configObj.numDice = config["numDice"];
 
+    
     if (config["dicePolicy"] == "SUM") {
       configObj.dicePolicy = DicePolicy::SUM;
     } else if (config["dicePolicy"] == "MIN") {
