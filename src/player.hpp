@@ -7,7 +7,7 @@ private:
   int    position;
 
 public:
-  Player(string name,int position = 1):name(name),position(position){}
+  Player(string name,int position = 0):name(name),position(position){}
   string getName();
 
   bool updatePosition(int x);

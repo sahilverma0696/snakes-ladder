@@ -21,6 +21,10 @@ void readConfig(GameConfig& configObj) {
         configObj.ladders.push_back(make_pair(ladder["tail"], ladder["head"]));
     }
 
+    for (const auto& croc : config["crocs"]) {
+        configObj.crocs.push_back(croc);
+    }
+
     configObj.numCells = config["numCells"];
 
     configObj.numPlayers = config["numPlayers"];

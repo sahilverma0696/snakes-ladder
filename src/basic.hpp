@@ -32,6 +32,7 @@ struct GameConfig {
     std::string filename;
     std::vector<std::pair<int, int> > snakes;
     std::vector<std::pair<int, int> > ladders;
+    std::vector<int> crocs;
     int numCells;
     int numPlayers;
     int maxRounds;

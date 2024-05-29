@@ -1,19 +1,19 @@
 {
-    "numCells": 100,
-    "numPlayers": 2,
-    "maxRounds": 999,
+    "numCells": 80,
+    "numPlayers": 3,
+    "maxRounds": 100,
     "numDice":2,
-    "dicePolicy":"SUM",
+    "dicePolicy":"MAX",
     "snakes": [
       { "head": 62, "tail": 5 },
       { "head": 33, "tail": 6 },
       { "head": 49, "tail": 9 },
-      { "head": 88, "tail": 16 },
+      { "head": 78, "tail": 16 },
       { "head": 41, "tail": 20 },
       { "head": 56, "tail": 53 },
-      { "head": 98, "tail": 64 },
-      { "head": 93, "tail": 73 },
-      { "head": 95, "tail": 75 }
+      { "head": 58, "tail": 44 },
+      { "head": 73, "tail": 63 },
+      { "head": 45, "tail": 25 }
     ],
     "ladders": [
       { "tail": 2, "head": 37 },
@@ -21,9 +21,9 @@
       { "tail": 10, "head": 32 },
       { "tail": 51, "head": 68 },
       { "tail": 61, "head": 79 },
-      { "tail": 65, "head": 84 },
-      { "tail": 71, "head": 91 },
-      { "tail": 81, "head": 100 }
+      { "tail": 65, "head": 72 },
+      { "tail": 41, "head": 48 },
+      { "tail": 5, "head": 12 }
     ]
 
   }

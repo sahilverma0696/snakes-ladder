@@ -4,13 +4,13 @@
 
 
 Board::Board(int numCells, const vector<pair<int, int> > &snakes,
-             const vector<pair<int, int> > &ladders)
+             const vector<pair<int, int> > &ladders, const vector<int> &crocs)
     : numCells(numCells) {
 
     // cells.resize(numCells); // need special obj initialization
     for (int i = 0; i < numCells; ++i) {
         bool isWin = (i == numCells - 1);
-        cells.push_back(Cell(i + 1, isWin, nullptr)); // Hard to find in unordered<pair<int,int>>
+        cells.push_back(Cell(i, isWin, nullptr)); // Hard to find in unordered<pair<int,int>>
     }
 
     // Add snakes
@@ -36,6 +36,17 @@ Board::Board(int numCells, const vector<pair<int, int> > &snakes,
         }
     }
 
+    // Add crocs
+    for (const auto& croc : crocs) {
+        int start = croc;
+        cout<<start<<"\t"<<endl;
+        if (start >= 6 && start <= numCells) {
+            cells[start - 1].updateObject(new Croc(start)); // Add ladder to start cell
+            if(cells[start-1].getObject()->getType()==ObjectType::CROC)    cout<<"CROC"<<endl;
+
+        }
+    }
+
     // Printing the ready board
     printBoard();
 }
@@ -52,7 +63,7 @@ void Board::printBoard() {
         cout << "Cell " << cell.getNumber() << ": ";
         if (cell.getObject() != nullptr) {
             if (cell.getObject()->getType() == ObjectType::SNAKE) {
-                cout << "SNAKE";
+                cout << "SNAKE STARTS : " << cell.getObject()->getStart()<<" ENDS AT "<< cell.getObject()->getEnd() << endl;
             } else if (cell.getObject()->getType() == ObjectType::LADDER) {
                 cout << "LADDER";
             }

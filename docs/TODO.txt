@@ -1,0 +1,3 @@
+1. PRINT DICE dicePolicy
+2. index error by 1
+3. check if particular value to reach the end

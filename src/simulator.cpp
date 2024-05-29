@@ -1,4 +1,5 @@
 #include "simulator.hpp"
+#include "basic.hpp"
 #include "object.hpp"
 #include "player.hpp"
 #include <__config>
@@ -45,7 +46,8 @@ void GameSimulator::simulate(int manualDice) {
             int currentPosition = currentPlayer.getPosition();
             int newPosition = currentPosition + roll;
 
-            cout<<"TERM for "<<currentPlayer.getName()<<"having current position as "<<currentPosition<<" having dice value "<<roll<<endl;
+
+            cout<<"TERM for "<<currentPlayer.getName()<<"having current position as "<<currentPosition +1 <<" having dice value "<<roll<<endl;
 
             if (newPosition < board->getNumCells()) {
               Object *currentObj = board->getCell(newPosition).getObject();
@@ -65,6 +67,13 @@ void GameSimulator::simulate(int manualDice) {
                 currentPlayer.updatePosition(currentObj->getEnd());
               }
 
+              else if (currentObj != nullptr && currentObj->getType() == ObjectType::CROC) {
+                cout << "CROC Encounter for " << currentPlayer.getName()
+                     << endl;
+                cout<<"CROC HAVING HEAD AT "<< currentObj->getEnd()<<endl;
+                currentPlayer.updatePosition(currentObj->getEnd());
+              }
+
               else if (beforePlayer != nullptr) {
                 cout<<"EXISTING player on this position for "<<beforePlayer->getName()<<endl;
                 beforePlayer->updatePosition(1); // move existing player to start
@@ -78,7 +87,7 @@ void GameSimulator::simulate(int manualDice) {
                 currentPlayer.updatePosition(newPosition);
               }
 
-            } else {
+            } else if (newPosition == board->getNumCells()) {
                 // Player reached the end of the board
                 cout << currentPlayer.getName() << " reached the end of the board!" << endl;
                 cout << currentPlayer.getName() << " wins the game!" << endl;
@@ -101,6 +110,7 @@ void GameSimulator::simulate(int manualDice) {
 }
 
 int GameSimulator::rollDice() {
+  
     int total = 0;
     for (int i = 0; i < config.numDice; ++i) {
         // Roll each die
@@ -108,9 +118,11 @@ int GameSimulator::rollDice() {
         total += die;
     }
 
+
     switch (config.dicePolicy) {
-        case DicePolicy::SUM:
-            return total;
+    case DicePolicy::SUM:
+      return total;
+            // return total;
         case DicePolicy::MIN: {
             int min = 6; 
             for (int i = 0; i < config.numDice; ++i) {
@@ -119,6 +131,7 @@ int GameSimulator::rollDice() {
                     min = die;
                 }
             }
+            
             return min;
         }
         case DicePolicy::MAX: {
@@ -129,9 +142,11 @@ int GameSimulator::rollDice() {
                     max = die;
                 }
             }
+            
             return max;
         }
         default:
-            return total;
-    }
+          // return total;
+          return total;
+        }
 }
