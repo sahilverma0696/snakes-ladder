@@ -16,7 +16,7 @@ GameSimulator::GameSimulator() {
 
     readConfig(config);
     numCells = config.numCells;
-    board = new Board(numCells, config.snakes, config.ladders);
+    board = new Board(numCells, config.snakes, config.ladders, config.crocs);
     
     // Initialize players
     for (int i = 0; i < config.numPlayers; ++i) {
@@ -70,8 +70,8 @@ void GameSimulator::simulate(int manualDice) {
               else if (currentObj != nullptr && currentObj->getType() == ObjectType::CROC) {
                 cout << "CROC Encounter for " << currentPlayer.getName()
                      << endl;
-                cout<<"CROC HAVING HEAD AT "<< currentObj->getEnd()<<endl;
-                currentPlayer.updatePosition(currentObj->getEnd());
+                cout<<"CROC HAVING HEAD AT "<< currentObj->getStart()<<endl;
+                currentPlayer.updatePosition(currentPosition-5); // PATCH: to be done in CROC, player class
               }
 
               else if (beforePlayer != nullptr) {
